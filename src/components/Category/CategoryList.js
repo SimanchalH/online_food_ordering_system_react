@@ -65,7 +65,18 @@ const CategoryList = () => {
                         These all are available categories. Kindly click on the categories to see the details of it.
                      </div>
                      <br />
-                     
+                     <form className="form-horizontal search_box">
+                        <div className="form-group">
+                           <label className="col-sm-2" htmlFor="email">Search Category:</label>
+                           <div className="col-sm-4">
+                              <input type="text" onChange={e => onChange(e)} name="search_text" className="form-control" placeholder="Search Category" required />
+                           </div>
+                           <div className="col-sm-4">
+                              <button type="button" className="btn btn-default" onClick={search_data}>Search</button>&nbsp;&nbsp;
+                              <button type="reset" className="btn btn-danger" onClick={reset_search}>Reset</button>
+                           </div>
+                        </div>
+                     </form>
                   </div>
                </div>
                <div className="row">
