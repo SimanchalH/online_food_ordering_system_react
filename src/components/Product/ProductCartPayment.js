@@ -1,13 +1,10 @@
 
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import { Link, Navigate } from 'react-router-dom';
 import config from '../../utils/config';
-import { withRouter } from "react-router"
 import Parser from 'html-react-parser';
-import { useSearchParams, useNavigate, useParams } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const ProductCartPayment = () => {
 
