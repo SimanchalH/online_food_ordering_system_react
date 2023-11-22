@@ -11,6 +11,7 @@ const ProductList = () => {
 
    let { id } = useParams();
    const [products, setData] = useState([]);
+   const [search_text, setSearchData] = useState([]);
    const [filteredData, setFilteredData] = useState([]);
    /**
     * Function for getting lists
@@ -25,12 +26,27 @@ const ProductList = () => {
          })
    }, []);
 
-   
+   const reset_search = () => {
+      search_text.search_text = '';
+      setFilteredData(products);
+   };
 
-   
+   const search_data = () => {
+      const newData = products.filter(product => {
+         return product.product_title.toLowerCase().includes(search_text.search_text.toLowerCase())
+            || product.category_title.toLowerCase().includes(search_text.search_text.toLowerCase());
+      });
+
+      if (search_text.search_text) {
+         setFilteredData(newData);
+      } else {
+         setFilteredData(products);
+      }
+   };
 
    // Handlinng Change Event
-   
+   const onChange = (e) =>
+      setSearchData({ [e.target.name]: e.target.value });
 
    return (
       <section>
@@ -52,7 +68,18 @@ const ProductList = () => {
                         These all are available products. Kindly click on the products to see the details of it.
                      </div>
                      <br />
-                     
+                     <form className="form-horizontal search_box">
+                        <div className="form-group">
+                           <label className="col-sm-2" htmlFor="email">Search Products:</label>
+                           <div className="col-sm-4">
+                              <input type="text" onChange={e => onChange(e)} name="search_text" className="form-control" placeholder="Search Products" required />
+                           </div>
+                           <div className="col-sm-4">
+                              <button type="button" className="btn btn-default" onClick={search_data}>Search</button>&nbsp;&nbsp;
+                              <button type="reset" className="btn btn-danger" onClick={reset_search}>Reset</button>
+                           </div>
+                        </div>
+                     </form>
                   </div>
                </div>
                <div className="row">
