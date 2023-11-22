@@ -131,13 +131,7 @@ const Login = ({ login, isAuthenticated }) => {
                           <input type="password" name="login_password" onChange={e => onChange(e)} className="form-control" required id="pwd" placeholder="Enter password" />
                         </div>
                       </div>
-                      {/* <div className="form-group">
-                        <div className="col-sm-offset-2 col-sm-10">
-                          <div className="checkbox">
-                            <label><input type="checkbox" /> Remember me</label>
-                          </div>
-                        </div>
-                      </div> */}
+                      
                       <div className="form-group">
                         <div className="col-sm-offset-2 col-sm-10">
                           <button type="submit" className="btn btn-default">Submit</button>
