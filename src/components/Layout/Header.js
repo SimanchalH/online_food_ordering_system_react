@@ -27,15 +27,7 @@ const Header = () => {
   console.log("Session Storage : ");
   console.log(window.sessionStorage.getItem("user"));
 
-  const agentLinks = (
-    <ul className="nav navbar-nav">
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/About">About</Link></li>
-      <li><Link to="/Dashboard">Dashboard</Link></li>
-      
-      <li><a onClick={logout} href="#!">Logout</a></li>
-    </ul>
-  )
+  
 
   const usersLinks = (
     <ul className="nav navbar-nav">
@@ -85,7 +77,7 @@ const Header = () => {
               <Fragment>
                 {
                     window.sessionStorage.getItem("user_level_id") == "2" ? usersLinks :
-                      window.sessionStorage.getItem("user_level_id") == "3" ? agentLinks : guestLinks
+                      
                 }
               </Fragment>
             )}
