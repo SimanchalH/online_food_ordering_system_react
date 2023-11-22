@@ -2,9 +2,8 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
-import { useSearchParams, useNavigate, useParams } from 'react-router-dom';
-import { LOGOUT } from '../../actions/types';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
