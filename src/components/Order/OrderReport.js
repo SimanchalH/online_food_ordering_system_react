@@ -10,7 +10,7 @@ import config from '../../utils/config';
 export default class OrderReport extends React.Component {
    state = {
       orders: []
-   }
+   } 
 
    /**
     * Confirmation Dialogue Implementation
