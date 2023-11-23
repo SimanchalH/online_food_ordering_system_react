@@ -265,3 +265,4 @@ const CustomerAdd = () => {
 };
 
 export default CustomerAdd;
+export def 
